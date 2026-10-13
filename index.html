@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Geremy's student portfolio featuring business, finance, and marketing projects.">
+  <title>Geremy | Business Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #0c1322;
+      --surface: #141e30;
+      --border: #2d3c52;
+      --text: #eef3fb;
+      --muted: #bac7d8;
+      --accent: #7fcbec;
+      --accent2: #b9ebdc;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent); }
+
+    .wrap {
+      max-width: 1040px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      min-height: 78px;
+    }
+
+    .logo {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .logo span { color: var(--accent); }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover { color: white; }
+
+    .hero { padding: 95px 0 78px; }
+
+    .eyebrow {
+      color: var(--accent2);
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      line-height: 1.12;
+      margin: 14px 0 24px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .lead {
+      font-size: 1.17rem;
+      color: var(--muted);
+      max-width: 790px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border: 1px solid var(--accent);
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #071222;
+    }
+
+    .btn.secondary { color: var(--accent); }
+
+    section { padding: 58px 0; }
+
+    section + section {
+      border-top: 1px solid var(--border);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin: 0 0 10px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      margin: 0 0 28px;
+      max-width: 720px;
+    }
+
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .panel, .project {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 25px;
+    }
+
+    .panel h3, .project h3 {
+      font-size: 1.11rem;
+      margin: 0 0 12px;
+    }
+
+    .panel ul {
+      margin: 0;
+      padding-left: 19px;
+      color: var(--muted);
+    }
+
+    .panel li + li { margin-top: 8px; }
+
+    .tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent2);
+      font-weight: 700;
+    }
+
+    .project h3 { margin: 8px 0; }
+
+    .project p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .project a {
+      font-weight: 700;
+      text-underline-offset: 4px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.91rem;
+      margin-top: 20px;
+    }
+
+    .contact { padding-bottom: 85px; }
+
+    .contact p {
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 23px 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 800px) {
+      .skills, .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .hero { padding: 65px 0; }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 17px 0;
+      }
+
+      nav { gap: 18px; }
+
+      section { padding: 42px 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#top">Geremy<span>.</span></a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <div class="eyebrow">Rutgers Business School · Student Portfolio</div>
+
+      <h1>Business thinking.<br><span>Analytical mindset.</span></h1>
+
+      <p class="lead">
+        I'm a Rutgers Business School student interested in finance,
+        marketing, and using research and analysis to make smarter
+        business decisions.
+      </p>
+
+      <div class="buttons">
+        <a class="btn primary" href="#projects">Explore my projects</a>
+        <a class="btn secondary" href="#skills">View my skills</a>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <h2>About me</h2>
+        <p class="section-desc">
+          I enjoy understanding what drives businesses, evaluating
+          opportunities, and communicating complex ideas clearly.
+          My coursework and hands-on experiences have helped me
+          strengthen my problem-solving, teamwork, and analytical skills.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <h2>Skills</h2>
+        <p class="section-desc">
+          A combination of technical, analytical, and professional
+          skills relevant to business roles.
+        </p>
+
+        <div class="skills">
+          <article class="panel">
+            <h3>Analysis & Research</h3>
+            <ul>
+              <li>Financial statement fundamentals</li>
+              <li>Investment and market analysis</li>
+              <li>Company and industry research</li>
+              <li>Data interpretation</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h3>Business Tools</h3>
+            <ul>
+              <li>Microsoft Excel</li>
+              <li>Microsoft PowerPoint</li>
+              <li>Business presentations</li>
+              <li>Written reports</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h3>Professional Strengths</h3>
+            <ul>
+              <li>Communication</li>
+              <li>Teamwork and collaboration</li>
+              <li>Client service</li>
+              <li>Attention to detail</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <h2>Selected Projects</h2>
+        <p class="section-desc">
+          Examples of academic and professional-development work
+          that reflect my interests.
+        </p>
+
+        <div class="projects">
+          <article class="project">
+            <span class="tag">Job Simulation</span>
+            <h3>Goldman Sachs Internal Audit Simulation</h3>
+
+            <p>
+              Completed a simulated internal audit experience and
+              wrote a reflection analyzing fixed-income trade execution
+              discrepancies, non-performing loans, and anti-money-laundering
+              controls. The paper explores risk awareness, root-cause
+              analysis, and communication across business teams.
+            </p>
+
+            <a href="Goldman%20Sachs%20Job%20simulation%20reflection.pdf"
+               target="_blank"
+               rel="noopener noreferrer">
+              Read My Reflection (PDF) ↗
+            </a>
+          </article>
+
+          <article class="project">
+            <span class="tag">Company Research</span>
+            <h3>BlackRock Company Research</h3>
+
+            <p>
+              Researched BlackRock's business, industry position,
+              and career opportunities, then organized the findings
+              into a concise company overview.
+            </p>
+
+            <a href="https://www.blackrock.com/corporate"
+               target="_blank"
+               rel="noopener noreferrer">
+              Company Reference ↗
+            </a>
+          </article>
+
+          <article class="project">
+            <span class="tag">Coursework</span>
+            <h3>Investment Risk & Return Analysis</h3>
+
+            <p>
+              Applied investment analysis concepts such as
+              diversification, expected return, and risk-adjusted
+              performance to practice evaluating portfolio decisions.
+            </p>
+
+            <a href="https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-funds"
+               target="_blank"
+               rel="noopener noreferrer">
+              Topic Reference ↗
+            </a>
+          </article>
+        </div>
+
+        <p class="note">
+          The Goldman Sachs project links to my original reflection PDF.
+          The other projects link to external reference resources.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <h2>Let's Connect</h2>
+
+        <p>
+          I'm interested in learning from professionals, exploring
+          internships, and applying analytical thinking to real
+          business challenges.
+        </p>
+
+        <p>
+          Connect with me through my portfolio's GitHub repository.
+        </p>
+
+        <a class="btn secondary" href="#top">Back to Top ↑</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Geremy · Personal Portfolio</span>
+      <span>Built with HTML & CSS · GitHub Pages</span>
+    </div>
+  </footer>
+</body>
+</html>
